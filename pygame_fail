@@ -1,0 +1,49 @@
+import pygame
+
+pygame.init()
+
+game_display = pygame.display.set_mode((800,600))
+pygame.display.set_caption('Roommate Match')
+
+pygame.display.update()
+blue=(0,0,190)
+black=(0,0,0)
+
+game_exit=False
+
+x= 300
+y= 300
+
+#font = pygame.front.SysFont(None,30)
+
+'''def text_objt(text,color):
+    text_surface = font.render(text,True,color)
+    return textSurface,textSurface.get_rect
+
+def message_on_screen(msg,color):
+    screen_text - font.render(msg,True,color)
+    game_display.bilt(screen_text, [displayWidth/2,displayHeight/2])'''
+'''   textSurf,textRect = text_odjt(msg,color)
+    textRect.center=(display_width/2),(display_height/2)
+    gamedisplay.bilt(textSurf,textRect)'''
+
+while not game_exit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            game_exit = True
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                x-=10
+            if event.key == pygame.K_RIGHT:
+                x+=10
+            if event.key == pygame.K_UP:
+                y-=10
+            if event.key == pygame.K_DOWN:
+                y+=10
+
+    game_display.fill(blue)
+    pygame.draw.rect(game_display,black,[x,y,10,10])
+    pygame.display.update()
+    
+pygame.quit()
+quit()
